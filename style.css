@@ -9,7 +9,7 @@ h1, h2, h3, h4, h5, a, p, span, body, div {font-weight: normal; font-family: 'La
 .header-profile-picture, .header-text {display: inline-block;}
 .header-name h1 {margin: 0;}
 .header-subtitle {margin-bottom: 12px;}
-.header-profile-picture {width: 100px; height: 100px; margin-right: 12px; border-radius: 50%; background-image: url(files/me.jpeg); background-position: center; background-size: contain;}
+.header-profile-picture {width: 100px; height: 100px; margin-right: 12px; border-radius: 50%; background-image: url(assets/me.jpg); background-position: center; background-size: contain;}
 .content {max-width: 748px; padding-left: 16px; padding-right: 16px; margin: auto; margin-top: 48px;}
 .hr {width: 100%; height: 1px; margin: 48px 0; background-color: #d6dbdf;}
 a {color: #2471a3; text-decoration: none;}
@@ -47,4 +47,95 @@ p {line-height: 1.5em;}
     .publication .row-media {width: 260px; height: 130px; margin: auto; margin-bottom: 12px; display: block;}
     .publication .row-text {display: block; width: 100%; margin-left: 0;}
     .press {display: block;}
+}
+
+.experience-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.experience-list li {
+    margin-bottom: 20px;
+}
+
+.time {
+    display: inline-block;
+    width: 150px;
+    font-weight: bold;
+}
+
+.experience {
+    display: inline-block;
+}
+
+/*.presentations {*/
+/*    list-style-type: none;*/
+/*    padding: 0;*/
+/*}*/
+
+/*.presentations li {*/
+/*    margin-bottom: 20px; !* Adjust the space between entries *!*/
+/*}*/
+
+/*.date {*/
+/*    display: inline-block;*/
+/*    width: 80px; !* Adjust the width for alignment *!*/
+/*    font-weight: bold;*/
+/*    min-width: 150px; !* Minimum width for the date *!*/
+/*    vertical-align: top; !* Align the date to the top of the text *!*/
+/*}*/
+
+/*.details {*/
+/*    display: inline-block;*/
+/*    vertical-align: top; !* Align the details to the top *!*/
+/*    max-width: calc(80%); !* Max width allows the text to wrap *!*/
+/*}*/
+
+/*.title {*/
+/*    font-weight: bold;*/
+/*}*/
+
+/*.event {*/
+/*    font-size: 0.9em; !* Smaller font size for the event *!*/
+/*    color: #555; !* Grey color for the event *!*/
+/*}*/
+
+.presentations {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.presentation {
+  display: flex;
+}
+
+.datetime {
+  flex-basis: 25%;
+  vertical-align: top;
+  padding: 5px; /* Adjust padding as needed */
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+}
+
+.date {
+  font-weight: bold;
+}
+
+.details {
+  flex-basis: 75%;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title {
+  font-weight: bold;
+}
+
+.event {
+  font-size: 0.99em; /* Smaller font size for the event */
+  color: #555; /* Grey color for the event */
 }
