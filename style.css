@@ -139,3 +139,9 @@ p {line-height: 1.5em;}
   font-size: 0.99em; /* Smaller font size for the event */
   color: #555; /* Grey color for the event */
 }
+
+.news {
+  font-size: 1.01em;
+  color: #000;
+}
+
