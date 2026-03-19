@@ -170,3 +170,22 @@ p {line-height: 1.5em; font-size: 1.0em; margin-bottom: 1.2em;}
   color: #000;
 }
 
+.news-list {
+  max-height: 800px;
+  overflow-y: auto;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 8px;
+}
+
+.new-badge {
+  display: inline-block;
+  background-color: #CD5C5C;
+  color: #fff;
+  font-size: 0.7em;
+  font-weight: bold;
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
