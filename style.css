@@ -1,12 +1,12 @@
 :root {
-    --text: #343a40;
-    --heading: #20252b;
-    --muted: #717981;
-    --link: #24658f;
-    --link-hover: #cf6d2e;
-    --line: #e5e8eb;
-    --soft: #f7f8f9;
-    --highlight: #fffbee;
+    --text: #30363a;
+    --heading: #191d20;
+    --muted: #6c747a;
+    --link: #2b607d;
+    --link-hover: #191d20;
+    --line: #e6e9eb;
+    --soft: #f7f8f8;
+    --highlight: #fafafa;
 }
 
 * {
@@ -66,7 +66,7 @@ h1 {
 
 h2 {
     margin: 0 0 14px;
-    font-size: 1.35rem;
+    font-size: 1.4rem;
     letter-spacing: -0.01em;
 }
 
@@ -127,7 +127,7 @@ p {
 }
 
 .header-links .btn {
-    font-size: 0.84rem;
+    font-size: 0.875rem;
 }
 
 .header-links .btn:not(:last-child)::after {
@@ -147,7 +147,7 @@ p {
 .section-nav-inner {
     display: flex;
     gap: 22px;
-    min-height: 40px;
+    min-height: 44px;
     align-items: center;
     overflow-x: auto;
     white-space: nowrap;
@@ -155,7 +155,7 @@ p {
 
 .section-nav a {
     color: var(--muted);
-    font-size: 0.78rem;
+    font-size: 0.875rem;
 }
 
 .section-nav a:hover {
@@ -192,7 +192,7 @@ p {
     max-width: 400px;
     margin: 0;
     color: var(--muted);
-    font-size: 0.82rem;
+    font-size: 0.875rem;
     text-align: right;
 }
 
@@ -209,7 +209,7 @@ p {
 .carousel-heading-side p {
     margin: 0;
     color: var(--muted);
-    font-size: 0.82rem;
+    font-size: 0.875rem;
 }
 
 .carousel-controls {
@@ -295,7 +295,7 @@ p {
 
 .direction-card > span:not(.direction-index):not(.direction-link) {
     display: block;
-    font-size: 0.78rem;
+    font-size: 0.84rem;
     line-height: 1.45;
 }
 
@@ -363,13 +363,13 @@ p {
 
 .demo-copy > span:last-child {
     color: var(--muted);
-    font-size: 0.78rem;
+    font-size: 0.84rem;
     line-height: 1.4;
 }
 
 .demo-meta {
     color: var(--muted);
-    font-size: 0.68rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.04em;
 }
@@ -383,13 +383,13 @@ p {
 .presentation {
     display: flex;
     gap: 20px;
-    padding: 5px 0;
+    padding: 7px 0;
 }
 
 .datetime {
     flex: 0 0 126px;
     color: var(--muted);
-    font-size: 0.8rem;
+    font-size: 0.875rem;
 }
 
 .details {
@@ -406,16 +406,25 @@ p {
 
 .news {
     color: var(--heading);
-    font-size: 0.86rem;
+    font-size: 1rem;
+    line-height: 1.5;
 }
 
 .news-list {
-    max-height: 360px;
+    max-height: 420px;
     padding-right: 14px;
     overflow-y: auto;
     overscroll-behavior-y: contain;
     scrollbar-color: #cfd5da transparent;
     scrollbar-width: thin;
+}
+
+.news-list .presentation {
+    border-bottom: 1px solid var(--line);
+}
+
+.news-list .presentation:first-child {
+    border-top: 1px solid var(--line);
 }
 
 .news-list:focus-visible {
@@ -443,7 +452,7 @@ p {
     border-radius: 2px;
     background: #bd5555;
     color: #fff;
-    font-size: 0.63rem;
+    font-size: 0.7rem;
     font-weight: 600;
     vertical-align: middle;
 }
@@ -463,7 +472,7 @@ p {
     border-bottom: 1px solid transparent;
     background: transparent;
     color: var(--muted);
-    font-size: 0.8rem;
+    font-size: 0.84rem;
     cursor: pointer;
 }
 
@@ -480,7 +489,7 @@ p {
 .publication-note {
     margin-bottom: 14px;
     color: var(--muted);
-    font-size: 0.8rem;
+    font-size: 0.84rem;
 }
 
 .publication {
@@ -499,8 +508,8 @@ p {
 
 .publication.highlight {
     padding-left: 12px;
-    background: linear-gradient(90deg, var(--highlight), #fff 62%);
-    box-shadow: inset 3px 0 0 #e7c85c;
+    background: var(--highlight);
+    box-shadow: inset 2px 0 0 #8b949b;
 }
 
 .publication.is-hidden {
@@ -519,7 +528,7 @@ p {
 .row-text {
     min-width: 0;
     color: var(--text);
-    font-size: 0.8rem;
+    font-size: 0.875rem;
     line-height: 1.46;
 }
 
@@ -527,7 +536,7 @@ p {
     display: inline-block;
     margin-bottom: 5px;
     color: var(--heading);
-    font-size: 0.91rem;
+    font-size: 1rem;
     font-weight: 600;
     line-height: 1.38;
 }
@@ -538,7 +547,7 @@ a.publication-title:hover {
 
 .row-text .btn {
     color: var(--link);
-    font-size: 0.74rem;
+    font-size: 0.8rem;
     white-space: nowrap;
 }
 
@@ -599,7 +608,7 @@ a.publication-title:hover {
     margin-inline: auto;
     padding: 16px 0;
     color: var(--muted);
-    font-size: 0.74rem;
+    font-size: 0.8rem;
 }
 
 .nobreak {
