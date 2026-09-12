@@ -409,8 +409,31 @@ p {
     font-size: 0.86rem;
 }
 
-.news-list.collapsed li:nth-child(n + 7) {
-    display: none;
+.news-list {
+    max-height: 360px;
+    padding-right: 14px;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    scrollbar-color: #cfd5da transparent;
+    scrollbar-width: thin;
+}
+
+.news-list:focus-visible {
+    outline: 1px solid var(--line);
+    outline-offset: 5px;
+}
+
+.news-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.news-list::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #cfd5da;
+}
+
+.news-list::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 .new-badge {
@@ -423,17 +446,6 @@ p {
     font-size: 0.63rem;
     font-weight: 600;
     vertical-align: middle;
-}
-
-.news-toggle {
-    margin-top: 10px;
-    padding: 0;
-    border: 0;
-    border-bottom: 1px solid currentColor;
-    background: transparent;
-    color: var(--link);
-    font-size: 0.84rem;
-    cursor: pointer;
 }
 
 .publication-filters {

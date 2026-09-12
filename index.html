@@ -14,7 +14,7 @@
     <link rel="apple-touch-icon" href="assets/logo.jpg">
     <link rel="icon" type="image/png" href="assets/logo.jpg">
     <link rel="manifest" href="assets/site.webmanifest">
-    <link rel="stylesheet" href="style.css?v=20260912-2">
+    <link rel="stylesheet" href="style.css?v=20260912-3">
 </head>
 
 <body>
@@ -152,7 +152,7 @@
             </div>
         </div>
 
-        <ul class="presentations news-list collapsed">
+        <ul class="presentations news-list" tabindex="0" aria-label="News updates, newest first">
             <li class="presentation">
                 <div class="datetime">
                     <span class="date">Mar 13, 2026</span>
@@ -379,7 +379,6 @@
                 </div>
             </li>
         </ul>
-        <button class="news-toggle" type="button" aria-expanded="false">Show earlier news</button>
     </section>
 
     <section id="awards" class="section-block awards-section">
@@ -1053,20 +1052,6 @@ function setupPublicationFilters() {
     filterPublications('featured');
 }
 
-function setupNewsToggle() {
-    const list = document.querySelector('.news-list');
-    const toggle = document.querySelector('.news-toggle');
-    if (!list || !toggle) return;
-
-    list.classList.add('collapsed');
-    toggle.addEventListener('click', () => {
-        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!isExpanded));
-        toggle.textContent = isExpanded ? 'Show earlier news' : 'Show less';
-        list.classList.toggle('collapsed', isExpanded);
-    });
-}
-
 function setupCarousels() {
     const scrollers = new Map();
 
@@ -1107,7 +1092,6 @@ function setupCarousels() {
 document.addEventListener('DOMContentLoaded', () => {
     updateStarCounts();
     setupPublicationFilters();
-    setupNewsToggle();
     setupCarousels();
 });
 
