@@ -200,6 +200,72 @@ p {
     margin-bottom: 8px;
 }
 
+.carousel-heading-side {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.carousel-heading-side p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.carousel-controls {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 5px;
+}
+
+.carousel-controls button {
+    display: grid;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    place-items: center;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: #fff;
+    color: var(--heading);
+    line-height: 1;
+    cursor: pointer;
+}
+
+.carousel-controls button:hover:not(:disabled) {
+    border-color: #aeb7bf;
+}
+
+.carousel-controls button:disabled {
+    color: #c8cdd2;
+    cursor: default;
+}
+
+.horizontal-scroller {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: stretch;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    scrollbar-color: #cfd5da transparent;
+    scrollbar-width: thin;
+}
+
+.horizontal-scroller::-webkit-scrollbar {
+    height: 5px;
+}
+
+.horizontal-scroller::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #cfd5da;
+}
+
+.horizontal-scroller::-webkit-scrollbar-track {
+    background: transparent;
+}
+
 .direction-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -237,10 +303,11 @@ p {
     color: var(--link);
 }
 
-.demo-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 24px;
+.demo-grid.horizontal-scroller {
+    grid-template-columns: none;
+    grid-auto-columns: clamp(320px, 64%, 560px);
+    gap: 18px;
+    padding-bottom: 9px;
 }
 
 .demo-card {
@@ -252,6 +319,7 @@ p {
     border-top: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
     color: inherit;
+    scroll-snap-align: start;
 }
 
 .demo-card:hover {
@@ -479,8 +547,23 @@ a.publication-title:hover {
     font-size: 0.75rem;
 }
 
-.projects-section .publication {
-    grid-template-columns: 145px minmax(0, 1fr);
+.project-scroller {
+    grid-auto-columns: minmax(255px, 38%);
+    gap: 18px;
+    padding-bottom: 9px;
+}
+
+.projects-section .project-scroller .publication {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    align-content: start;
+    padding: 12px;
+    border: 1px solid var(--line);
+    scroll-snap-align: start;
+}
+
+.projects-section .project-scroller .row-media {
+    width: 100%;
 }
 
 .experience-section .presentation,
@@ -595,13 +678,19 @@ a.publication-title:hover {
         text-align: left;
     }
 
+    .carousel-heading-side {
+        justify-content: space-between;
+        margin-top: 7px;
+    }
+
     .direction-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 0 16px;
     }
 
-    .demo-grid {
-        grid-template-columns: 1fr;
+    .demo-grid.horizontal-scroller {
+        grid-template-columns: none;
+        grid-auto-columns: 84%;
     }
 
     .demo-card {
@@ -614,6 +703,14 @@ a.publication-title:hover {
         grid-template-columns: 112px minmax(0, 1fr);
         gap: 12px;
         align-items: start;
+    }
+
+    .project-scroller {
+        grid-auto-columns: 78%;
+    }
+
+    .projects-section .project-scroller .publication {
+        grid-template-columns: 1fr;
     }
 
     .presentation {
@@ -645,6 +742,15 @@ a.publication-title:hover {
     .projects-section .publication {
         grid-template-columns: 96px minmax(0, 1fr);
         gap: 10px;
+    }
+
+    .demo-grid.horizontal-scroller,
+    .project-scroller {
+        grid-auto-columns: 86%;
+    }
+
+    .projects-section .project-scroller .publication {
+        grid-template-columns: 1fr;
     }
 }
 

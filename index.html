@@ -14,7 +14,7 @@
     <link rel="apple-touch-icon" href="assets/logo.jpg">
     <link rel="icon" type="image/png" href="assets/logo.jpg">
     <link rel="manifest" href="assets/site.webmanifest">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20260912-2">
 </head>
 
 <body>
@@ -112,9 +112,15 @@
                 <span class="section-kicker">In motion</span>
                 <h2 class="noselect">Selected demos</h2>
             </div>
-            <p>Research systems beyond static figures and tables.</p>
+            <div class="carousel-heading-side">
+                <p>Research systems beyond static figures and tables.</p>
+                <div class="carousel-controls" aria-label="Demo navigation">
+                    <button type="button" data-carousel-target="demos-scroll" data-carousel-direction="-1" aria-label="Previous demos">&#8592;</button>
+                    <button type="button" data-carousel-target="demos-scroll" data-carousel-direction="1" aria-label="Next demos">&#8594;</button>
+                </div>
+            </div>
         </div>
-        <div class="demo-grid">
+        <div class="demo-grid horizontal-scroller" id="demos-scroll" tabindex="0" aria-label="Demo gallery">
             <a class="demo-card" href="https://www.bilibili.com/video/BV1ARQHYTECF/" target="_blank" rel="noopener noreferrer">
                 <span class="demo-media" style="background-image: url(assets/aharobot.png);">
                     <span class="play-button" aria-hidden="true">&#9654;</span>
@@ -715,7 +721,12 @@
                 <span class="section-kicker">Open source</span>
                 <h2 class="noselect">Projects</h2>
             </div>
+            <div class="carousel-controls" aria-label="Project navigation">
+                <button type="button" data-carousel-target="projects-scroll" data-carousel-direction="-1" aria-label="Previous projects">&#8592;</button>
+                <button type="button" data-carousel-target="projects-scroll" data-carousel-direction="1" aria-label="Next projects">&#8594;</button>
+            </div>
         </div>
+        <div class="project-scroller horizontal-scroller" id="projects-scroll" tabindex="0" aria-label="Open-source project gallery">
         <div class="publication row clearfix">
             <div class="row-media" style="background-image: url(assets/aharobot.png);"></div>
             <div class="row-text">
@@ -753,6 +764,7 @@
                 Oct 2023<br/>
                 <a class="btn btn-orange" href="https://uni-rlhf.github.io/">project page</a> / <a class="btn" href="https://github.com/pickxiguapi/Clean-Offline-RLHF">code</a>
             </div>
+        </div>
         </div>
     </section>
     <section id="experience" class="section-block experience-section">
@@ -1055,11 +1067,48 @@ function setupNewsToggle() {
     });
 }
 
+function setupCarousels() {
+    const scrollers = new Map();
+
+    document.querySelectorAll('[data-carousel-target]').forEach((button) => {
+        const targetId = button.dataset.carouselTarget;
+        const scroller = document.getElementById(targetId);
+        if (!scroller) return;
+
+        if (!scrollers.has(targetId)) scrollers.set(targetId, scroller);
+        button.addEventListener('click', () => {
+            const direction = Number(button.dataset.carouselDirection);
+            scroller.scrollBy({ left: scroller.clientWidth * 0.82 * direction, behavior: 'smooth' });
+        });
+    });
+
+    const updateButtons = (targetId, scroller) => {
+        const maxScroll = scroller.scrollWidth - scroller.clientWidth;
+        document.querySelectorAll(`[data-carousel-target="${targetId}"]`).forEach((button) => {
+            const direction = Number(button.dataset.carouselDirection);
+            const disabled = direction < 0 ? scroller.scrollLeft <= 1 : scroller.scrollLeft >= maxScroll - 1;
+            button.disabled = disabled;
+        });
+    };
+
+    scrollers.forEach((scroller, targetId) => {
+        let frame;
+        const update = () => {
+            cancelAnimationFrame(frame);
+            frame = requestAnimationFrame(() => updateButtons(targetId, scroller));
+        };
+        scroller.addEventListener('scroll', update, { passive: true });
+        window.addEventListener('resize', update);
+        update();
+    });
+}
+
 // 页面加载完成后执行更新
 document.addEventListener('DOMContentLoaded', () => {
     updateStarCounts();
     setupPublicationFilters();
     setupNewsToggle();
+    setupCarousels();
 });
 
 // 每小时更新一次
