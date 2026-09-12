@@ -1,8 +1,10 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <title>Yifu Yuan</title>
     <meta charset="UTF-8">
     <meta name="author" content="Yifu Yuan">
+    <meta name="description" content="Yifu Yuan is a PhD researcher working on embodied AI, decision making, reinforcement learning, and AI agents.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="Yifu Yuan">
     <meta property="og:description" content="PhD student, Tianjin University">
@@ -15,56 +17,136 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<div class="header noselect">
-    <div class="content row">
-        <div class="header-profile-picture"></div>
+<body>
+<header class="header noselect">
+    <div class="content hero row">
+        <div class="header-profile-picture" role="img" aria-label="Portrait of Yifu Yuan"></div>
         <div class="header-text">
+            <div class="eyebrow">Embodied AI · Decision Making · AI Agents</div>
             <div class="header-name">
                 <h1>Yifu Yuan (袁逸夫)</h1>
             </div>
             <div class="header-subtitle">
                 PhD student, Tianjin University
             </div>
+            <p class="hero-statement">Building embodied agents that reason, learn, and act.</p>
             <div class="header-links">
-                <a class="btn" href="#contact">Email</a> /
-                <a class="btn" href="https://scholar.google.com/citations?user=83JhosMAAAAJ&hl=zh-CN">Google Scholar</a>
-                /
-                <a class="btn" href="https://github.com/pickxiguapi">GitHub</a> /
-                <a class="btn" href="https://twitter.com/yifu_yuan">Twitter</a> /
+                <a class="btn" href="#contact">Email</a>
+                <a class="btn" href="https://scholar.google.com/citations?user=83JhosMAAAAJ&amp;hl=zh-CN">Google Scholar</a>
+                <a class="btn" href="https://github.com/pickxiguapi">GitHub</a>
+                <a class="btn" href="https://twitter.com/yifu_yuan">Twitter</a>
                 <a class="btn" href="https://www.zhihu.com/people/xuan-lan-37">Zhihu</a>
             </div>
         </div>
     </div>
-</div>
-<div class="content" style="padding-bottom: 64px;">
-    <div>
+</header>
+<nav class="section-nav noselect" aria-label="Primary navigation">
+    <div class="content section-nav-inner">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#demos">Demos</a>
+        <a href="#publications">Publications</a>
+        <a href="#news">News</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
+<main class="content page-content">
+    <section id="about" class="section-block about-section">
         <p>
             I am a third-year PhD student at <a href="http://rl.beiyang.ren">Deep Reinforcement Learning (DRL) Lab</a>,
             Tianjin University (<a href="http://www.tju.edu.cn/">TJU</a>), advised by Prof. <a
                 href="http://www.icdai.org/jianye.html">Jianye Hao</a>. I interned at Netease Fuxi AI
-            Lab (<a href="https://fuxi.163.com/laboratory">Fuxi</a>) during 2023, where I worked with Dr. Yujing Hu. Then I interned at <a href="https://juewu.tencent.com/">Tencent JueWu Team</a>, advised by Prof. <a href="https://zhongwen.one/">Zhongwen Xu</a>. Now
-            I interned at <a href="">Tencent Hunyuan</a>, advised by <a href="https://ancientmooner.github.io/">Han Hu</a> and <a href="https://cientgu.github.io/">Shuyang Gu</a>. I
+            Lab (<a href="https://fuxi.163.com/laboratory">Fuxi</a>) during 2023, where I worked with Dr. Yujing Hu. Then I interned at <a href="https://juewu.tencent.com/">Tencent JueWu Team</a>, advised by Prof. <a href="https://zhongwen.one/">Zhongwen Xu</a>. I am currently
+            interning at Tencent Hunyuan, advised by <a href="https://ancientmooner.github.io/">Han Hu</a> and <a href="https://cientgu.github.io/">Shuyang Gu</a>. I
             received my Bachelor's degree from the
             Dalian University of Technology (<a href="https://www.dlut.edu.cn/">DUT</a>), advised by Prof. <a
                 href="http://faculty.dlut.edu.cn/GuozhenTan/zh_CN/index/768191/list/index.htm">Guozhen Tan</a>.
         </p>
-    </div>
+    </section>
 
-    <div>
-        <h2 class="noselect">Research interest</h2>
+    <section id="research" class="section-block research-section">
+        <div class="section-heading">
+            <div>
+                <span class="section-kicker">Research</span>
+                <h2 class="noselect">Research directions</h2>
+            </div>
+            <p>My work connects perception, reasoning, learning, and action.</p>
+        </div>
         <p>
-            I am broadly interested in research on the building <span class="bold">embodied agents</span> for <span
-                class="bold">
-            decision making</span>. To achieve this, my current research interest contains <span class="bold">Embodied AI</span>,
-            <span class="bold">Reinforcement Learning</span>, <span class="bold">Diffusion Model</span>,
-            and <span class="bold">LLM agents</span>. I hope to ride the wave of AI
-            changing the world.
+            I am broadly interested in building <span class="bold">embodied agents</span> for
+            <span class="bold">decision making</span>, with a focus on embodied AI, reinforcement learning,
+            generative models, preference learning, and LLM agents.
         </p>
-    </div>
-    <div>
-        <h2 class="noselect">News</h2>
+        <div class="direction-grid">
+            <button class="direction-card" type="button" data-filter-link="embodied">
+                <span class="direction-index">01</span>
+                <strong>Embodied AI &amp; Robotics</strong>
+                <span>Reasoning, manipulation, and open-source robotic systems.</span>
+                <span class="direction-link">Explore papers <span aria-hidden="true">&#8599;</span></span>
+            </button>
+            <button class="direction-card" type="button" data-filter-link="decision">
+                <span class="direction-index">02</span>
+                <strong>Generative Decision Making</strong>
+                <span>Diffusion planning, world models, and reinforcement learning.</span>
+                <span class="direction-link">Explore papers <span aria-hidden="true">&#8599;</span></span>
+            </button>
+            <button class="direction-card" type="button" data-filter-link="alignment">
+                <span class="direction-index">03</span>
+                <strong>Preference Learning &amp; RLHF</strong>
+                <span>Learning from diverse feedback and aligning agent behavior.</span>
+                <span class="direction-link">Explore papers <span aria-hidden="true">&#8599;</span></span>
+            </button>
+            <button class="direction-card" type="button" data-filter-link="agents">
+                <span class="direction-index">04</span>
+                <strong>AI Agents &amp; Applications</strong>
+                <span>Generalist agents and real-world intelligent applications.</span>
+                <span class="direction-link">Explore papers <span aria-hidden="true">&#8599;</span></span>
+            </button>
+        </div>
+    </section>
 
-        <ul class="presentations news-list">
+    <section id="demos" class="section-block demos-section">
+        <div class="section-heading">
+            <div>
+                <span class="section-kicker">In motion</span>
+                <h2 class="noselect">Selected demos</h2>
+            </div>
+            <p>Research systems beyond static figures and tables.</p>
+        </div>
+        <div class="demo-grid">
+            <a class="demo-card" href="https://www.bilibili.com/video/BV1ARQHYTECF/" target="_blank" rel="noopener noreferrer">
+                <span class="demo-media" style="background-image: url(assets/aharobot.png);">
+                    <span class="play-button" aria-hidden="true">&#9654;</span>
+                </span>
+                <span class="demo-copy">
+                    <span class="demo-meta">Robotics · Video demo</span>
+                    <strong>AhaRobot</strong>
+                    <span>A low-cost, open-source bimanual mobile manipulator for embodied AI.</span>
+                </span>
+            </a>
+            <a class="demo-card" href="https://sites.google.com/view/FACUL-demo" target="_blank" rel="noopener noreferrer">
+                <span class="demo-media" style="background-image: url(assets/FACUL.jpg);">
+                    <span class="play-button" aria-hidden="true">&#8599;</span>
+                </span>
+                <span class="demo-copy">
+                    <span class="demo-meta">AI companions · Interactive demo</span>
+                    <strong>FACUL</strong>
+                    <span>Language-based interaction with AI companions deployed in Arena Breakout Infinite.</span>
+                </span>
+            </a>
+        </div>
+    </section>
+
+    <section id="news" class="section-block news-section">
+        <div class="section-heading compact-heading">
+            <div>
+                <span class="section-kicker">Updates</span>
+                <h2 class="noselect">News</h2>
+            </div>
+        </div>
+
+        <ul class="presentations news-list collapsed">
             <li class="presentation">
                 <div class="datetime">
                     <span class="date">Mar 13, 2026</span>
@@ -201,7 +283,7 @@
                     <span class="date">Dec 14, 2024</span>
                 </div>
                 <div class="details">
-                    <div class="news"><span class="bold">Invited Talks on Auto Bidding as AlGB Track Winner <span class="italic">@ NeurIPS 2024 Auto-Bidding in Large-Scale Auctions Competition</span> </span> <a href="https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&mid=2650945758&idx=1&sn=84662e5c928a94f05231e225161df9e8&chksm=8551c712e88733d0e5bc081768e36752eeb7faa0c7e0c17b2d346e77c606b5b76c1ee6c281d4&mpshare=1&scene=2&srcid=1204oe3uj6sV3JrLcFqlYg4u&sharer_shareinfo=bb566b1cf2f5b1126e1a7b3be849bffd&sharer_shareinfo_first=2b47182bd602be4c2816bc58b9327113#rd">[Link]</a> </div>
+                    <div class="news"><span class="bold">Invited Talks on Auto Bidding as AlGB Track Winner <span class="italic">@ NeurIPS 2024 Auto-Bidding in Large-Scale Auctions Competition</span> </span> <a href="https://mp.weixin.qq.com/s?__biz=MzA3MzI4MjgzMw==&amp;mid=2650945758&amp;idx=1&amp;sn=84662e5c928a94f05231e225161df9e8&amp;chksm=8551c712e88733d0e5bc081768e36752eeb7faa0c7e0c17b2d346e77c606b5b76c1ee6c281d4&amp;mpshare=1&amp;scene=2&amp;srcid=1204oe3uj6sV3JrLcFqlYg4u&amp;sharer_shareinfo=bb566b1cf2f5b1126e1a7b3be849bffd&amp;sharer_shareinfo_first=2b47182bd602be4c2816bc58b9327113#rd">[Link]</a> </div>
                 </div>
             </li>
             <li class="presentation">
@@ -233,7 +315,7 @@
                     <span class="date">Aug 04, 2024</span>
                 </div>
                 <div class="details">
-                    <div class="news"><span class="bold">Invited Talks: Diffusion Models for Decision Making <span class="italic">@ THU MOS</span> </span> <a href="【Diffusion Models for Decision Making, THU FuRoC 机器人小讲堂第三讲】 https://www.bilibili.com/video/BV1dSYNeSExm/?share_source=copy_web&vd_source=f682dccc2fa0c100887b2c0759d03212">[Link]</a>
+                    <div class="news"><span class="bold">Invited Talks: Diffusion Models for Decision Making <span class="italic">@ THU MOS</span> </span> <a href="https://www.bilibili.com/video/BV1dSYNeSExm/">[Link]</a>
                     </div>
                 </div>
             </li>
@@ -291,10 +373,16 @@
                 </div>
             </li>
         </ul>
-    </div>
+        <button class="news-toggle" type="button" aria-expanded="false">Show earlier news</button>
+    </section>
 
-    <div>
-        <h2 class="noselect">Awards</h2>
+    <section id="awards" class="section-block awards-section">
+        <div class="section-heading compact-heading">
+            <div>
+                <span class="section-kicker">Recognition</span>
+                <h2 class="noselect">Awards</h2>
+            </div>
+        </div>
         <ul class="presentations">
             <li class="presentation">
                 <div class="details">
@@ -349,13 +437,26 @@
                 </div>
             </li>
         </ul>
-    </div>
+    </section>
 
-    <div>
-        <h2 class="noselect">Publications and preprints</h2>
-        <p>Papers sorted by recency. Authors with equal contribution are marked by <span class="bold">*</span>.
-            Representative papers are <span style="background-color: #fff8df">highlighted</span>.</p>
-        <div class="highlight publication row clearfix">
+    <section id="publications" class="section-block publications-section">
+        <div class="section-heading">
+            <div>
+                <span class="section-kicker">Publications</span>
+                <h2 class="noselect">Explore by research direction</h2>
+            </div>
+            <p>Choose a direction to follow the research thread across years.</p>
+        </div>
+        <div class="publication-filters" role="group" aria-label="Filter publications by research direction">
+            <button class="filter-button active" type="button" data-filter="featured" aria-pressed="true">Featured</button>
+            <button class="filter-button" type="button" data-filter="embodied" aria-pressed="false">Embodied AI</button>
+            <button class="filter-button" type="button" data-filter="decision" aria-pressed="false">Decision Making</button>
+            <button class="filter-button" type="button" data-filter="alignment" aria-pressed="false">Preference &amp; RLHF</button>
+            <button class="filter-button" type="button" data-filter="agents" aria-pressed="false">AI Agents</button>
+            <button class="filter-button" type="button" data-filter="all" aria-pressed="false">All papers</button>
+        </div>
+        <p class="publication-note">Authors with equal contribution are marked by <span class="bold">*</span>. <span id="publication-count" aria-live="polite"></span></p>
+        <div class="highlight publication row clearfix" data-topics="featured embodied">
             <div class="row-media" style="background-image: url(assets/embodied-r1.jpg);"></div>
             <div class="row-text">
                 <a class="publication-title bold" href="https://arxiv.org/abs/2508.13998">Embodied-R1: Reinforced Embodied Reasoning for General Robotic Manipulation</a><br/>
@@ -368,7 +469,7 @@
                     / <a class="btn btn-red" href="https://huggingface.co/IffYuan/Embodied-R1-3B-v1">model</a>
             </div>
         </div>
-        <div class="highlight publication row clearfix">
+        <div class="highlight publication row clearfix" data-topics="featured embodied">
             <div class="row-media" style="background-image: url(assets/fsd.png);"></div>
             <div class="row-text">
                 <a class="publication-title bold" href="https://arxiv.org/abs/2505.08548">From Seeing to Doing: Bridging Reasoning and Decision for Robotic Manipulation</a><br/>
@@ -376,20 +477,19 @@
                 <span class="italic">International Conference on Learning Representations (<a href="https://iclr.cc">ICLR</a>)</span>, 2026<br/>
                 <a class="btn btn-red" href="https://embodied-fsd.github.io/">project page</a> 
                 / <a class="btn btn-red" href="https://arxiv.org/abs/2505.08548">paper</a> 
-                / <a class="btn btn-red" href="https://huggingface.co/collections/IffYuan/fsd-683fa0d552e70f302fd04b34">models & datasets</a> 
+                / <a class="btn btn-red" href="https://huggingface.co/collections/IffYuan/fsd-683fa0d552e70f302fd04b34">models &amp; datasets</a>
                 / <a class="btn btn-red" href="https://github.com/pickxiguapi/Embodied-FSD">code</a>
             </div>
         </div>
-        <div class="publication row clearfix">
+        <div class="publication row clearfix" data-topics="agents">
             <div class="row-media" style="background-image: url(assets/afemaster.jpg);"></div>
             <div class="row-text">
-                <a class="publication-title bold" href="">AFE-Master: Enhancing LLM-Driven Autonomous Feature Engineering with Domain-Specific Language Parsing and Guided Local Search</a><br/>
+                <span class="publication-title bold">AFE-Master: Enhancing LLM-Driven Autonomous Feature Engineering with Domain-Specific Language Parsing and Guided Local Search</span><br/>
                 Hebin Liang, Jianye HAO, Jinyi Liu, Yi Ma, Zilin Cao, Jing Liang, Kun Shao, Zhaocheng Du, Fei Ni, <span class="bold">Yifu Yuan</span>, YAN ZHENG<br/>
                 <span class="italic">The Web Conference (<a href="https://www2026.thewebconf.org/">WWW</a>)</span> Industry Track, 2026<br/>
-                <a class="btn btn-red" href="">paper</a>
             </div>
         </div>
-        <div class="publication row clearfix">
+        <div class="publication row clearfix" data-topics="agents">
             <div class="row-media" style="background-image: url(assets/FACUL.jpg);"></div>
             <div class="row-text">
                 <a class="publication-title bold" href="https://arxiv.org/pdf/2511.13112">	
@@ -401,7 +501,7 @@
                  <a class="btn btn-red" href="https://arxiv.org/pdf/2511.13112">paper</a> / <a class="btn btn-red" href="https://sites.google.com/view/FACUL-demo">homepage</a>
             </div>
         </div>
-        <div class="publication row clearfix">
+        <div class="publication row clearfix" data-topics="decision">
             <div class="row-media" style="background-image: url(assets/COLA.jpg);"></div>
             <div class="row-text">
                 <a class="publication-title bold" href="https://openreview.net/forum?id=Cldpn7H3NN">	
@@ -412,7 +512,7 @@
                  <a class="btn btn-red" href="https://openreview.net/forum?id=Cldpn7H3NN">paper</a>
             </div>
         </div>
-        <div class="publication row clearfix">
+        <div class="publication row clearfix" data-topics="alignment">
             <div class="row-media" style="background-image: url(assets/PPE.jpg);"></div>
             <div class="row-text">
                 <a class="publication-title bold" href="https://openreview.net/forum?id=9KIvyH3L7c">Improving Reward Models with Proximal Policy Exploration for Preference-Based Reinforcement Learning</a><br/>
@@ -422,7 +522,7 @@
                  <a class="btn btn-red" href="https://openreview.net/forum?id=9KIvyH3L7c">paper</a>
             </div>
         </div>
-        <div class="highlight publication row clearfix">
+        <div class="highlight publication row clearfix" data-topics="featured embodied">
             <div class="row-media" style="background-image: url(assets/aharobot.png);"></div>
             <div class="row-text">
                 <a class="publication-title bold" href="https://arxiv.org/abs/2408.15501">AhaRobot: A Low-Cost Open-Source Bimanual Mobile Manipulator for Embodied AI</a><br/>
@@ -434,10 +534,10 @@
                 <a class="btn btn-dark" href="https://github.com/hilookas/AstraFirmwares">firmwares</a> / 
                 <a class="btn btn-dark" href="https://github.com/hilookas/Astra_Hardwares">hardware</a> / 
                 <a class="btn btn-orange" href="https://aha-robot.notion.site/Getting-Started-1b433900bc8780c4a503e3490ce3e718">assembly guide</a> /
-                <a class="btn btn-orange" href="https://www.bilibili.com/video/BV1ARQHYTECF/?spm_id_from=333.337.search-card.all.click&vd_source=6a5c9a5e6c61a9f4d15c74a8b068477f">demo</a>
+                <a class="btn btn-orange" href="https://www.bilibili.com/video/BV1ARQHYTECF/">demo</a>
             </div>
         </div>
-        <div class="publication row clearfix">
+        <div class="publication row clearfix" data-topics="decision alignment">
             <div class="row-media" style="background-image: url(assets/moduli.png);"></div>
             <div class="row-text">
                 <a class="publication-title bold" href="https://arxiv.org/abs/2408.15501">MODULI: Unlocking Preference Generalization via Diffusion Models for Offline Multi-Objective Reinforcement Learning</a><br/>
@@ -446,17 +546,16 @@
                 <a class="btn btn-red" href="https://arxiv.org/abs/2408.15501">paper</a> / <a class="btn btn-red" href="https://github.com/pickxiguapi/MODULI">code</a>
             </div>
         </div>
-        <div class="publication row clearfix">
+        <div class="publication row clearfix" data-topics="decision agents">
             <div class="row-media" style="background-image: url(assets/rstar.png);"></div>
             <div class="row-text">
-                <a class="publication-title bold" href="#">R*: Efficient Reward Design via Reward Structure Evolution and Parameter Alignment Optimization with Large Language Models</a><br/>
+                <span class="publication-title bold">R*: Efficient Reward Design via Reward Structure Evolution and Parameter Alignment Optimization with Large Language Models</span><br/>
                 Pengyi Li, Jianye HAO, Hongyao Tang, <span class="bold">Yifu Yuan</span>, Jinbin Qiao, Zibin Dong, Yan Zheng<br/>
                 <span class="italic">International Conference on Machine Learning (<a href="https://icml.cc">ICML</a>)</span>, 2025<br/>
-                <a class="btn btn-red" href="#">paper</a>
             </div>
         </div>
 
-        <div class="publication row clearfix">
+        <div class="publication row clearfix" data-topics="agents">
             <div class="row-media" style="background-image: url(assets/CRReLU.png);"></div>
             <div class="row-text">
                 <a class="publication-title bold" href="https://arxiv.org/pdf/2405.12954">Entropy-based Activation Function Optimization: A Method on Searching Better Activation Functions</a><br/>
@@ -466,10 +565,10 @@
                 <a class="btn btn-red" href="https://arxiv.org/pdf/2405.12954">paper</a>
             </div>
         </div>
-        <div class="publication row clearfix">
+        <div class="publication row clearfix" data-topics="agents">
             <div class="row-media" style="background-image: url(assets/sheetagent.png);"></div>
             <div class="row-text">
-                <a class="publication-title bold" href="">SheetAgent: A Generalist Agent for Spreadsheet Reasoning and
+                <a class="publication-title bold" href="https://arxiv.org/abs/2403.03636">SheetAgent: A Generalist Agent for Spreadsheet Reasoning and
                     Manipulation via Large Language Models</a><br/>
                 Yibin Chen*, <span class="bold">Yifu Yuan*</span>, Zeyu Zhang, Yan Zheng, Jinyi Liu, Fei Ni, Jianye
                 HAO<br/>
@@ -479,16 +578,16 @@
                 <a class="btn btn-orange" href="https://sheetagent.github.io/">project page</a> / <a class="btn btn-red" href="https://arxiv.org/abs/2403.03636">paper</a> / <a class="btn btn-red" href="https://github.com/cybisolated/SheetAgent">code</a> / <a class="btn btn-dark" href="https://github.com/cybisolated/SheetAgent">benchmark</a>
             </div>
         </div>
-        <div class="publication row clearfix">
+        <div class="publication row clearfix" data-topics="decision alignment">
             <div class="row-media" style="background-image: url(assets/mentor.png);"></div>
             <div class="row-text">
-                <a class="publication-title bold" href="">MENTOR: Guiding Hierarchical Reinforcement Learning with Human Feedback and Dynamic Distance Constraint</a><br/>
+                <a class="publication-title bold" href="https://arxiv.org/abs/2402.14244">MENTOR: Guiding Hierarchical Reinforcement Learning with Human Feedback and Dynamic Distance Constraint</a><br/>
                 Xinglin Zhou*, <span class="bold">Yifu Yuan*</span>, Shaofu Yang, Jianye Hao<br/>
                 <span class="italic">IEEE Transactions on Emerging Topics in Computational Intelligence <a href="https://ieeexplore.ieee.org/document/10166663">(JCR Q1)</a></span><br/>
                 <a class="btn btn-red" href="https://arxiv.org/abs/2402.14244">paper</a> / <a class="btn btn-red" href="https://github.com/nidesuipao/MENTOR">code</a>
             </div>
         </div>
-        <div class="highlight publication row clearfix">
+        <div class="highlight publication row clearfix" data-topics="featured decision">
             <div class="row-media" style="background-image: url(assets/cleandiffuser.png);"></div>
             <div class="row-text">
                 <a class="publication-title bold" href="https://arxiv.org/abs/2406.09509">CleanDiffuser: An Easy-to-use Modularized Library for Diffusion Models in Decision Making</a><br/>
@@ -498,7 +597,7 @@
                 <a class="btn btn-red" href="https://arxiv.org/abs/2406.09509">paper</a> / <a class="btn btn-red" href="https://github.com/CleanDiffuserTeam/CleanDiffuser">code</a> / <a class="btn btn-red" href="https://cleandiffuserteam.github.io/CleanDiffuserDocs/">docs</a>
             </div>
         </div>
-        <div class="publication row clearfix">
+        <div class="publication row clearfix" data-topics="decision">
             <div class="row-media" style="background-image: url(assets/diffuserlite.png);"></div>
             <div class="row-text">
                 <a class="publication-title bold" href="https://arxiv.org/abs/2401.15443">DiffuserLite: Towards
@@ -511,26 +610,26 @@
                     class="btn btn-red" href="https://arxiv.org/abs/2401.15443">paper</a> / <a class="btn btn-red" href="https://github.com/CleanDiffuserTeam/CleanDiffuser">code</a>
             </div>
         </div>
-        <div class="publication row clearfix">
+        <div class="publication row clearfix" data-topics="embodied agents">
             <div class="row-media" style="background-image: url(assets/peria.png);"></div>
             <div class="row-text">
-                <a class="publication-title bold" href="">PERIA: Perceive, Reason, Imagine, Act via Holistic Language and Vision Planning for Manipulation</a><br/>
+                <a class="publication-title bold" href="https://openreview.net/forum?id=zw2K6LfFI9">PERIA: Perceive, Reason, Imagine, Act via Holistic Language and Vision Planning for Manipulation</a><br/>
                 Fei Ni, Jianye HAO, Shiguang Wu, Longxin Kou, <span class="bold">Yifu Yuan</span>, Zibin Dong, Jinyi Liu, MingZhi Li, YAN ZHENG, Yuzheng Zhuang<br/>
                 <span class="italic">Conference on Neural Information Processing Systems (<a
                         href="https://neurips.cc/">NeurIPS</a>)</span>, 2024<br/>
                 <a class="btn btn-orange" href="https://peria-for-robotics.github.io/">project page</a> / <a class="btn btn-red" href="https://openreview.net/forum?id=zw2K6LfFI9">paper</a>
             </div>
         </div>
-        <div class="publication row clearfix">
+        <div class="publication row clearfix" data-topics="embodied">
             <div class="row-media" style="background-image: url(assets/KISA.png);"></div>
             <div class="row-text">
-                <a class="publication-title bold" href="https://openreview.net/forum?id=oCI9gHocws&referrer=%5Bthe%20profile%20of%20Yifu%20Yuan%5D(%2Fprofile%3Fid%3D~Yifu_Yuan1)">KISA: A Unified Keyframe Identifier and Skill Annotator for Long-Horizon Robotics Demonstrations</a><br/>
+                <a class="publication-title bold" href="https://openreview.net/forum?id=oCI9gHocws">KISA: A Unified Keyframe Identifier and Skill Annotator for Long-Horizon Robotics Demonstrations</a><br/>
                 Longxin Kou, Fei Ni, YAN ZHENG, Jinyi Liu, <span class="bold">Yifu Yuan</span>, Zibin Dong, Jianye HAO<br/>
                 <span class="italic">International Conference on Machine Learning (<a href="https://icml.cc">ICML</a>)</span>, 2024<br/>
                 <a class="btn btn-orange" href="https://kisa-for-robotics.github.io/">project page</a> / <a class="btn btn-red" href="https://openreview.net/forum?id=oCI9gHocws">paper</a>
             </div>
         </div>
-        <div class="publication row clearfix">
+        <div class="publication row clearfix" data-topics="embodied alignment agents">
             <div class="row-media" style="background-image: url(assets/criticgpt.png);"></div>
             <div class="row-text">
                 <a class="publication-title bold" href="https://arxiv.org/abs/2402.14245">CriticGPT: Multimodal LLM as a Critic for Robot
@@ -538,10 +637,10 @@
                 Jinyi Liu*, <span class="bold">Yifu Yuan*</span>, Jianye HAO, Fei Ni, Lingzhi Fu, Yibin Chen, Yan
                 Zheng<br/>
                 <span class="italic">AAAI2024 RL+LLMs Workshop</span><br/>
-                <a class="btn btn-orange" href="">project page</a> / <a class="btn btn-red" href="https://arxiv.org/abs/2402.14245">paper</a>
+                <a class="btn btn-red" href="https://arxiv.org/abs/2402.14245">paper</a>
             </div>
         </div>
-        <div class="highlight publication row clearfix">
+        <div class="highlight publication row clearfix" data-topics="featured alignment">
             <div class="row-media" style="background-image: url(assets/unirlhf.png);"></div>
             <div class="row-text">
                 <a class="publication-title bold" href="https://arxiv.org/abs/2402.02423">Uni-RLHF: Universal Platform
@@ -552,10 +651,10 @@
                 2024<br/>
                 <a class="btn btn-orange" href="https://uni-rlhf.github.io/">project page</a> / <a class="btn btn-red"
                                                                                                    href="https://arxiv.org/abs/2402.02423">paper</a>
-                / <a class="btn" href="https://github.com/pickxiguapi/Clean-Offline-RLHF">benchmark & dataset</a> / <a class="btn btn-dark" href="https://github.com/pickxiguapi/Uni-RLHF-Platform">platform</a>
+                / <a class="btn" href="https://github.com/pickxiguapi/Clean-Offline-RLHF">benchmark &amp; dataset</a> / <a class="btn btn-dark" href="https://github.com/pickxiguapi/Uni-RLHF-Platform">platform</a>
             </div>
         </div>
-        <div class="publication row clearfix">
+        <div class="publication row clearfix" data-topics="decision alignment">
             <div class="row-media" style="background-image: url(assets/aligndiff.png);"></div>
             <div class="row-text">
                 <a class="publication-title bold" href="https://arxiv.org/abs/2310.02054">AlignDiff: Aligning Diverse
@@ -567,10 +666,9 @@
                 <span class="italic">NeurIPS Diffusion Workshop, 2023</span><br/>
                 <a class="btn btn-orange" href="https://aligndiff.github.io">project page</a> / <a class="btn btn-red"
                                                                                                    href="https://arxiv.org/abs/2310.02054">paper</a>
-                / <a class="btn" href="">code</a> / <a class="btn btn-dark" href="">dataset</a>
             </div>
         </div>
-        <div class="publication row clearfix">
+        <div class="publication row clearfix" data-topics="decision">
             <div class="row-media" style="background-image: url(assets/ed2.png);"></div>
             <div class="row-text">
                 <a class="publication-title bold" href="https://arxiv.org/abs/2112.02817">ED2: Environment Dynamics
@@ -582,7 +680,7 @@
                                                                                               href="https://github.com/ED2-source-code/ED2">code</a>
             </div>
         </div>
-        <div class="publication row clearfix">
+        <div class="publication row clearfix" data-topics="decision">
             <div class="row-media" style="background-image: url(assets/metadiffuser.png);"></div>
             <div class="row-text">
                 <a class="publication-title bold" href="https://arxiv.org/abs/2305.19923">MetaDiffuser: Diffusion Model
@@ -594,7 +692,7 @@
                     class="btn btn-red" href="https://arxiv.org/abs/2305.19923">paper</a>
             </div>
         </div>
-        <div class="publication row clearfix">
+        <div class="publication row clearfix" data-topics="decision">
             <div class="row-media" style="background-image: url(assets/euclid.png);"></div>
             <div class="row-text">
                 <a class="publication-title bold" href="https://arxiv.org/abs/2210.00498">EUCLID: Towards Efficient
@@ -610,9 +708,14 @@
                                                                                                href="https://github.com/pickxiguapi/euclid-iclr2023">code</a>
             </div>
         </div>
-    </div>
-    <div>
-        <h2 class="noselect">Misc. open-source projects</h2>
+    </section>
+    <section id="projects" class="section-block projects-section">
+        <div class="section-heading compact-heading">
+            <div>
+                <span class="section-kicker">Open source</span>
+                <h2 class="noselect">Projects</h2>
+            </div>
+        </div>
         <div class="publication row clearfix">
             <div class="row-media" style="background-image: url(assets/aharobot.png);"></div>
             <div class="row-text">
@@ -624,7 +727,7 @@
                 <a class="btn btn-dark" href="https://github.com/hilookas/AstraFirmwares">firmwares</a> / 
                 <a class="btn btn-dark" href="https://github.com/hilookas/Astra_Hardwares">hardware</a> / 
                 <a class="btn btn-orange" href="https://aha-robot.notion.site/Getting-Started-1b433900bc8780c4a503e3490ce3e718">assembly guide</a> /
-                <a class="btn btn-orange" href="https://www.bilibili.com/video/BV1ARQHYTECF/?spm_id_from=333.337.search-card.all.click&vd_source=6a5c9a5e6c61a9f4d15c74a8b068477f">demo</a>
+                <a class="btn btn-orange" href="https://www.bilibili.com/video/BV1ARQHYTECF/">demo</a>
             </div>
         </div>
         <div class="publication row clearfix">
@@ -651,9 +754,14 @@
                 <a class="btn btn-orange" href="https://uni-rlhf.github.io/">project page</a> / <a class="btn" href="https://github.com/pickxiguapi/Clean-Offline-RLHF">code</a>
             </div>
         </div>
-    </div>
-    <div>
-        <h2 class="noselect">Internship Experiences</h2>
+    </section>
+    <section id="experience" class="section-block experience-section">
+        <div class="section-heading compact-heading">
+            <div>
+                <span class="section-kicker">Background</span>
+                <h2 class="noselect">Internship experience</h2>
+            </div>
+        </div>
         <ul class="presentations">
             <li class="presentation">
                 <div class="datetime">
@@ -683,8 +791,8 @@
                 </div>
             </li>
         </ul>
-    </div>
-    <div>
+    </section>
+    <section id="education" class="section-block education-section">
         <h2 class="noselect">Education</h2>
         <ul class="presentations">
             <li class="presentation">
@@ -715,8 +823,8 @@
                 </div>
             </li>
         </ul>
-    </div>
-    <div>
+    </section>
+    <section id="talks" class="section-block talks-section">
         <h2 class="noselect">Invited Talks</h2>
 
         <ul class="presentations">
@@ -774,22 +882,21 @@
                 </div>
             </li>
         </ul>
-    </div>
-    <div>
+    </section>
+    <section id="service" class="section-block service-section">
         <h2 class="noselect">Academic Service</h2>
         <span class="bold">Reviewers</span>: <span class="italic">ICML2024/2025, NeurIPS 2024/2025, ICLR2025, ICCV2025, IROS2025, UAI2024, TNNLS</span>
-    </div>
+    </section>
 
-    <div class="noselect">
-        <a id="contact"></a>
+    <section id="contact" class="section-block contact-section noselect">
         <h2>Contact</h2>
         I'm very welcome to any kind of collaboration or discussion. Feel free to contact me via email at <br>
         <span class="bold">yuanyf</span> [at] <span class="bold">tju.edu.cn</span>.
-    </div>
-</div>
+    </section>
+</main>
 <div class="footer noselect">
     <div class="footer-content">
-        &copy; Updated by Yifu Yuan, Jul. 2025.
+        &copy; Yifu Yuan. Updated Sep. 2026.
     </div>
 </div>
 
@@ -897,9 +1004,66 @@ async function updateStarCounts() {
     await Promise.all(updatePromises);
 }
 
+function filterPublications(filter) {
+    const publications = Array.from(document.querySelectorAll('#publications .publication[data-topics]'));
+    const buttons = document.querySelectorAll('.filter-button');
+    let visibleCount = 0;
+
+    publications.forEach((publication) => {
+        const topics = publication.dataset.topics.split(' ');
+        const isVisible = filter === 'all' || topics.includes(filter);
+        publication.classList.toggle('is-hidden', !isVisible);
+        if (isVisible) visibleCount += 1;
+    });
+
+    buttons.forEach((button) => {
+        const isActive = button.dataset.filter === filter;
+        button.classList.toggle('active', isActive);
+        button.setAttribute('aria-pressed', String(isActive));
+    });
+
+    const count = document.getElementById('publication-count');
+    if (count) count.textContent = `${visibleCount} ${visibleCount === 1 ? 'paper' : 'papers'} shown.`;
+}
+
+function setupPublicationFilters() {
+    document.querySelectorAll('.filter-button').forEach((button) => {
+        button.addEventListener('click', () => filterPublications(button.dataset.filter));
+    });
+
+    document.querySelectorAll('[data-filter-link]').forEach((button) => {
+        button.addEventListener('click', () => {
+            filterPublications(button.dataset.filterLink);
+            document.getElementById('publications').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
+    filterPublications('featured');
+}
+
+function setupNewsToggle() {
+    const list = document.querySelector('.news-list');
+    const toggle = document.querySelector('.news-toggle');
+    if (!list || !toggle) return;
+
+    list.classList.add('collapsed');
+    toggle.addEventListener('click', () => {
+        const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!isExpanded));
+        toggle.textContent = isExpanded ? 'Show earlier news' : 'Show less';
+        list.classList.toggle('collapsed', isExpanded);
+    });
+}
+
 // 页面加载完成后执行更新
-document.addEventListener('DOMContentLoaded', updateStarCounts);
+document.addEventListener('DOMContentLoaded', () => {
+    updateStarCounts();
+    setupPublicationFilters();
+    setupNewsToggle();
+});
 
 // 每小时更新一次
 setInterval(updateStarCounts, 3600000);
 </script>
+</body>
+</html>
