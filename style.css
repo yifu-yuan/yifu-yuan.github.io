@@ -386,9 +386,9 @@ p {
 .demo-grid.horizontal-scroller {
     grid-template-columns: none;
     grid-template-rows: repeat(2, auto);
-    grid-auto-columns: calc((100% - 30px) / 4);
+    grid-auto-columns: calc((100% - 32px) / 3);
     grid-auto-flow: column;
-    gap: 10px;
+    gap: 16px;
     padding-bottom: 9px;
 }
 
@@ -904,7 +904,7 @@ a.publication-title:hover {
 
     .demo-grid.horizontal-scroller {
         grid-template-columns: none;
-        grid-auto-columns: calc((100% - 20px) / 3);
+        grid-auto-columns: calc((100% - 32px) / 3);
     }
 
     .publication,
@@ -972,7 +972,7 @@ a.publication-title:hover {
 
     .demo-grid.horizontal-scroller,
     .project-scroller {
-        grid-auto-columns: calc((100% - 10px) / 2);
+        grid-auto-columns: calc((100% - 16px) / 2);
     }
 
     .projects-section .project-scroller .publication { grid-template-columns: 1fr; }
