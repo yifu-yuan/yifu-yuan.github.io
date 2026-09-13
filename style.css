@@ -385,7 +385,9 @@ p {
 
 .demo-grid.horizontal-scroller {
     grid-template-columns: none;
+    grid-template-rows: repeat(2, auto);
     grid-auto-columns: calc((100% - 30px) / 4);
+    grid-auto-flow: column;
     gap: 10px;
     padding-bottom: 9px;
 }
@@ -413,6 +415,31 @@ p {
     object-fit: cover;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.16);
     pointer-events: none;
+}
+
+.demo-placeholder {
+    position: relative;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background-position: center;
+    background-size: cover;
+    isolation: isolate;
+}
+
+.demo-placeholder::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: rgba(5, 31, 58, 0.54);
+    content: "";
+}
+
+.demo-placeholder > span {
+    padding: 4px 8px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
 }
 
 .demo-card > strong {
