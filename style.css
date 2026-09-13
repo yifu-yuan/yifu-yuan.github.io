@@ -568,12 +568,30 @@ p {
 }
 
 .publication {
+    position: relative;
     display: grid;
     grid-template-columns: 175px minmax(0, 1fr);
     gap: 30px;
     align-items: center;
     margin: 21px 0;
     padding: 0 0 0 20px;
+}
+
+.publications-section .publication[data-venue]::before {
+    position: absolute;
+    z-index: 1;
+    top: 7px;
+    left: 20px;
+    min-width: 58px;
+    padding: 2px 9px;
+    background: var(--navy);
+    color: #fff;
+    content: attr(data-venue);
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .publication:first-of-type {
@@ -809,6 +827,10 @@ a.publication-title:hover {
         gap: 12px;
         align-items: start;
         padding-left: 0;
+    }
+
+    .publications-section .publication[data-venue]::before {
+        left: 0;
     }
 
     .project-scroller {
