@@ -165,13 +165,32 @@ p {
 .header-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px 14px;
+    align-items: center;
+    gap: 14px;
     margin-top: 18px;
 }
 
-.header-links .btn {
-    font-size: 0.875rem;
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 24px;
     color: var(--navy);
+    font-size: 20px;
+    line-height: 1;
+    transition: color 140ms ease, transform 140ms ease;
+}
+
+.social-link svg {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+}
+
+.social-link:hover {
+    color: var(--link);
+    transform: translateY(-1px) scale(1.08);
 }
 
 .section-nav {
@@ -760,15 +779,14 @@ a.publication-title:hover {
 
     .header-links {
         justify-content: flex-start;
+        gap: 12px;
         margin-top: 5px;
     }
 
-    .header-links .btn {
-        font-size: 0.76rem;
-    }
-
-    .header-links .btn:not(:last-child)::after {
-        margin: 0 5px;
+    .social-link {
+        width: 20px;
+        height: 22px;
+        font-size: 18px;
     }
 
     h1 {
