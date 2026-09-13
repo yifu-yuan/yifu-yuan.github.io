@@ -46,9 +46,9 @@ html {
 body {
     position: relative;
     display: grid;
-    grid-template-columns: 250px minmax(0, 660px);
+    grid-template-columns: 250px minmax(0, 720px);
     column-gap: 60px;
-    width: min(970px, calc(100% - 30px));
+    width: min(1030px, calc(100% - 30px));
     margin: 0 auto;
     padding: 84px 0 30px;
     background: #fff;
@@ -178,7 +178,7 @@ p {
     position: absolute;
     top: 28px;
     right: 0;
-    width: 660px;
+    width: 720px;
     border: 0;
     background: #fff;
 }
@@ -731,8 +731,8 @@ a.publication-title:hover {
     content: "";
 }
 
-@media (max-width: 960px) {
-    body { display: block; width: min(660px, calc(100% - 30px)); padding-top: 65px; }
+@media (max-width: 1060px) {
+    body { display: block; width: min(720px, calc(100% - 30px)); padding-top: 65px; }
     .section-nav { top: 20px; width: 100%; }
     .header { position: static; margin-bottom: 35px; }
     .hero { flex-direction: row; align-items: center; }
