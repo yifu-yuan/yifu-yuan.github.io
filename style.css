@@ -66,7 +66,9 @@ h1 {
 
 h2 {
     margin: 0 0 14px;
-    font-size: 1.4rem;
+    color: var(--link-hover);
+    font-size: 1.3rem;
+    font-weight: 700;
     letter-spacing: -0.01em;
 }
 
@@ -220,20 +222,19 @@ p {
 
 .carousel-controls button {
     display: grid;
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     padding: 0;
     place-items: center;
-    border: 1px solid var(--line);
-    border-radius: 50%;
-    background: #fff;
-    color: var(--heading);
+    border: 0;
+    background: transparent;
+    color: var(--link);
     line-height: 1;
     cursor: pointer;
 }
 
 .carousel-controls button:hover:not(:disabled) {
-    border-color: #aeb7bf;
+    color: var(--link-hover);
 }
 
 .carousel-controls button:disabled {
@@ -267,36 +268,46 @@ p {
 }
 
 .direction-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 0 22px;
-    margin-top: 20px;
-    border-top: 1px solid var(--line);
+    display: block;
+    margin-top: 12px;
 }
 
 .direction-card {
+    position: relative;
     display: block;
-    padding: 12px 0 14px;
+    width: 100%;
+    padding: 3px 0 3px 17px;
     border: 0;
-    border-bottom: 1px solid var(--line);
     background: transparent;
-    color: var(--muted);
+    color: var(--text);
     text-align: left;
     cursor: pointer;
 }
 
+.direction-card::before {
+    position: absolute;
+    left: 2px;
+    color: var(--muted);
+    content: "•";
+}
+
 .direction-card strong {
-    display: block;
-    margin-bottom: 3px;
+    display: inline;
     color: var(--heading);
-    font-size: 0.93rem;
-    font-weight: 600;
+    font-size: 0.98rem;
+    font-weight: 700;
+}
+
+.direction-card strong::after {
+    color: var(--muted);
+    font-weight: 400;
+    content: " — ";
 }
 
 .direction-card > span:not(.direction-index):not(.direction-link) {
-    display: block;
-    font-size: 0.84rem;
-    line-height: 1.45;
+    display: inline;
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
 
 .direction-card:hover strong {
@@ -306,7 +317,7 @@ p {
 .demo-grid.horizontal-scroller {
     grid-template-columns: none;
     grid-auto-columns: clamp(320px, 64%, 560px);
-    gap: 18px;
+    gap: 28px;
     padding-bottom: 9px;
 }
 
@@ -315,9 +326,8 @@ p {
     grid-template-columns: 130px minmax(0, 1fr);
     gap: 15px;
     align-items: center;
-    padding: 12px 0;
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
+    padding: 4px 0 10px;
+    border: 0;
     color: inherit;
     scroll-snap-align: start;
 }
@@ -420,11 +430,16 @@ p {
 }
 
 .news-list .presentation {
-    border-bottom: 1px solid var(--line);
+    position: relative;
+    padding-left: 17px;
 }
 
-.news-list .presentation:first-child {
-    border-top: 1px solid var(--line);
+.news-list .presentation::before {
+    position: absolute;
+    top: 7px;
+    left: 2px;
+    color: var(--muted);
+    content: "•";
 }
 
 .news-list:focus-visible {
@@ -498,18 +513,17 @@ p {
     gap: 17px;
     align-items: center;
     margin: 0;
-    padding: 14px 0;
-    border-bottom: 1px solid var(--line);
+    padding: 12px 0;
 }
 
 .publication:first-of-type {
-    border-top: 1px solid var(--line);
+    border-top: 0;
 }
 
 .publication.highlight {
-    padding-left: 12px;
-    background: var(--highlight);
-    box-shadow: inset 2px 0 0 #8b949b;
+    padding-left: 0;
+    background: transparent;
+    box-shadow: none;
 }
 
 .publication.is-hidden {
@@ -570,7 +584,7 @@ a.publication-title:hover {
 
 .project-scroller {
     grid-auto-columns: minmax(255px, 38%);
-    gap: 18px;
+    gap: 28px;
     padding-bottom: 9px;
 }
 
@@ -578,8 +592,8 @@ a.publication-title:hover {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
     align-content: start;
-    padding: 12px;
-    border: 1px solid var(--line);
+    padding: 0 0 12px;
+    border: 0;
     scroll-snap-align: start;
 }
 
