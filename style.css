@@ -61,7 +61,7 @@ h5 {
 
 h1 {
     margin: 0 0 4px;
-    font-size: 2.05rem;
+    font-size: 1.85rem;
     letter-spacing: -0.02em;
 }
 
@@ -78,14 +78,14 @@ p {
 }
 
 .content {
-    width: min(800px, calc(100% - 40px));
+    width: min(760px, calc(100% - 40px));
     margin-inline: auto;
 }
 
 .header {
-    padding: 30px 0 26px;
+    padding: 18px 0 25px;
     background: #fff;
-    border-bottom: 1px solid var(--line);
+    border-bottom: 0;
 }
 
 .header::after,
@@ -140,17 +140,16 @@ p {
 }
 
 .section-nav {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-    border-bottom: 1px solid var(--line);
-    background: rgba(255, 255, 255, 0.96);
+    position: static;
+    border: 0;
+    background: #fff;
 }
 
 .section-nav-inner {
     display: flex;
     gap: 22px;
-    min-height: 44px;
+    min-height: 0;
+    padding-top: 22px;
     align-items: center;
     overflow-x: auto;
     white-space: nowrap;
@@ -166,16 +165,16 @@ p {
 }
 
 .page-content {
-    padding-top: 30px;
-    padding-bottom: 50px;
+    padding-top: 20px;
+    padding-bottom: 42px;
 }
 
 .section-block {
-    margin-bottom: 34px;
+    margin-bottom: 28px;
 }
 
 .about-section {
-    margin-bottom: 30px;
+    margin-bottom: 26px;
     width: 100%;
 }
 
@@ -503,20 +502,29 @@ p {
 .publication-filters {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px 18px;
-    margin: 18px 0 10px;
-    padding-bottom: 8px;
-    border-bottom: 1px solid var(--line);
+    gap: 3px 7px;
+    margin: 2px 0 10px;
+    padding: 0;
+    border: 0;
 }
 
 .filter-button {
-    padding: 0 0 4px;
+    padding: 0;
     border: 0;
-    border-bottom: 1px solid transparent;
     background: transparent;
-    color: var(--muted);
+    color: var(--link);
     font-size: 0.84rem;
     cursor: pointer;
+}
+
+.filter-button::before {
+    color: var(--text);
+    content: "[";
+}
+
+.filter-button::after {
+    color: var(--text);
+    content: "]";
 }
 
 .filter-button:hover {
@@ -524,9 +532,8 @@ p {
 }
 
 .filter-button.active {
-    border-bottom-color: var(--heading);
-    color: var(--heading);
-    font-weight: 600;
+    color: var(--navy);
+    font-weight: 700;
 }
 
 .publication-note {
@@ -579,7 +586,7 @@ p {
 .publication-title {
     display: inline-block;
     margin-bottom: 5px;
-    color: var(--heading);
+    color: var(--link);
     font-size: 1rem;
     font-weight: 600;
     line-height: 1.38;
@@ -602,7 +609,7 @@ a.publication-title:hover {
 .italic,
 .event {
     color: var(--muted);
-    font-style: normal;
+    font-style: italic;
 }
 
 .stars {
@@ -644,11 +651,11 @@ a.publication-title:hover {
 }
 
 .footer {
-    border-top: 1px solid var(--line);
+    border-top: 0;
 }
 
 .footer-content {
-    width: min(800px, calc(100% - 40px));
+    width: min(760px, calc(100% - 40px));
     margin-inline: auto;
     padding: 16px 0;
     color: var(--muted);
@@ -731,7 +738,7 @@ a.publication-title:hover {
     }
 
     .section-block {
-        margin-bottom: 32px;
+        margin-bottom: 28px;
     }
 
     .section-heading {
