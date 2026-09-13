@@ -678,6 +678,23 @@ a.publication-title:hover {
     color: var(--link-hover);
 }
 
+.publication-accolades {
+    margin: 1px 0;
+    color: #CD5C5C;
+    font-size: 0.875rem;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.publication-accolades a {
+    color: inherit;
+}
+
+.publication-accolades a:hover {
+    color: var(--link-hover);
+}
+
 .italic,
 .event {
     color: var(--text);
