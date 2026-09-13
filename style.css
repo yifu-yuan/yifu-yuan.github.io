@@ -442,7 +442,7 @@ p {
 }
 
 .news-list {
-    max-height: 360px;
+    max-height: 240px;
     padding: 0 14px 0 40px;
     list-style: disc;
     overflow-y: auto;
@@ -452,8 +452,12 @@ p {
 }
 
 .news-list .presentation {
-    display: list-item;
+    display: none;
     padding: 0;
+}
+
+.news-list .presentation.acceptance {
+    display: list-item;
 }
 
 .news-list .datetime,
