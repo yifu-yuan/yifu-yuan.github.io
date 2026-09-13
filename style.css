@@ -673,8 +673,8 @@ a.publication-title:hover {
 }
 
 .project-scroller {
-    grid-auto-columns: minmax(255px, 38%);
-    gap: 28px;
+    grid-auto-columns: calc((100% - 30px) / 4);
+    gap: 10px;
     padding-bottom: 9px;
 }
 
@@ -682,13 +682,16 @@ a.publication-title:hover {
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr;
     align-content: start;
-    padding: 0 0 12px;
+    margin: 0;
+    padding: 4px 0 8px;
     border: 0;
     scroll-snap-align: start;
 }
 
 .projects-section .project-scroller .row-media {
     width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
 }
 
 .experience-section .presentation,
@@ -834,7 +837,7 @@ a.publication-title:hover {
     }
 
     .project-scroller {
-        grid-auto-columns: 78%;
+        grid-auto-columns: calc((100% - 20px) / 3);
     }
 
     .projects-section .project-scroller .publication {
@@ -887,8 +890,6 @@ a.publication-title:hover {
     .project-scroller {
         grid-auto-columns: calc((100% - 10px) / 2);
     }
-
-    .project-scroller { grid-auto-columns: 86%; }
 
     .projects-section .project-scroller .publication { grid-template-columns: 1fr; }
 }
