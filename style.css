@@ -214,6 +214,7 @@ p {
 }
 
 .about-section {
+    display: block !important;
     margin-bottom: 35px;
     width: 100%;
 }
@@ -224,6 +225,12 @@ p {
     border-radius: 0;
     background: transparent;
     box-shadow: none;
+}
+
+.about-section > h2,
+.about-section > p {
+    display: block;
+    width: 100%;
 }
 
 .section-heading {
