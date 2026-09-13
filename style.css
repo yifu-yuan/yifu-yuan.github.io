@@ -452,12 +452,8 @@ p {
 }
 
 .news-list .presentation {
-    display: none;
-    padding: 0;
-}
-
-.news-list .presentation.acceptance {
     display: list-item;
+    padding: 0;
 }
 
 .news-list .datetime,
