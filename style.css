@@ -669,13 +669,6 @@ a.publication-title:hover {
     font-style: italic;
 }
 
-.stars {
-    display: inline-block;
-    margin-left: 6px;
-    color: var(--muted);
-    font-size: 0.75rem;
-}
-
 .project-scroller {
     grid-auto-columns: calc((100% - 30px) / 4);
     gap: 10px;
