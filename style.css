@@ -572,7 +572,7 @@ p {
     display: grid;
     grid-template-columns: 175px minmax(0, 1fr);
     gap: 30px;
-    align-items: center;
+    align-items: start;
     margin: 21px 0;
     padding: 0 0 0 20px;
 }
@@ -622,6 +622,22 @@ p {
     background-size: contain;
     border-radius: 8px;
     box-shadow: 3px 3px 6px #888;
+}
+
+.paper-preview {
+    display: grid;
+    place-items: center;
+    padding: 18px;
+    background:
+        linear-gradient(135deg, rgba(4, 51, 97, 0.08), rgba(51, 153, 204, 0.16)),
+        #fff;
+    color: var(--navy);
+    font-weight: 700;
+    text-align: center;
+}
+
+.paper-preview::after {
+    content: attr(data-preview);
 }
 
 .row-text {
