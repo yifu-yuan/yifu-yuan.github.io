@@ -417,22 +417,22 @@
                 <strong>SemanticVLA</strong>
             </article>
             <article class="demo-card">
-                <video class="demo-video" autoplay muted loop playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noplaybackrate noremoteplayback" poster="assets/embodied-r1.jpg" draggable="false" oncontextmenu="return false" aria-label="Embodied-R1 manipulation demo">
-                    <source src="https://embodied-r1.github.io/videos/1.mp4" type="video/mp4">
-                </video>
+                <div class="demo-video demo-placeholder" style="background-image: url(assets/embodied-r1.jpg);" role="img" aria-label="Embodied-R1 video coming soon">
+                    <span>Video coming soon</span>
+                </div>
                 <strong>Embodied-R1</strong>
             </article>
             <article class="demo-card">
                 <video class="demo-video" autoplay muted loop playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noplaybackrate noremoteplayback" poster="assets/aharobot.png" draggable="false" oncontextmenu="return false" aria-label="AhaRobot manipulation demo">
                     <source src="https://aha-robot.github.io/static/videos/VID_20250222_161618_compressed.mp4" type="video/mp4">
                 </video>
-                <strong>AhaRobot</strong>
+                <strong>AhaRobot · Manipulation</strong>
             </article>
             <article class="demo-card">
-                <video class="demo-video" autoplay muted loop playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noplaybackrate noremoteplayback" poster="assets/fsd.png" draggable="false" oncontextmenu="return false" aria-label="FSD manipulation demo">
-                    <source src="https://embodied-fsd.github.io/videos/fsd/817_1755245483_raw.mp4" type="video/mp4">
+                <video class="demo-video" autoplay muted loop playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noplaybackrate noremoteplayback" poster="assets/aharobot.png" draggable="false" oncontextmenu="return false" aria-label="AhaRobot mobile demo">
+                    <source src="https://aha-robot.github.io/static/videos/VID_20250225_125239_compressed.mp4" type="video/mp4">
                 </video>
-                <strong>FSD</strong>
+                <strong>AhaRobot · Mobile</strong>
             </article>
         </div>
     </section>
@@ -1158,6 +1158,10 @@
     </div>
 </div>
 
+<div class="demo-hover-preview" id="demo-hover-preview" aria-hidden="true">
+    <video class="demo-hover-player" id="demo-hover-player" muted loop playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noplaybackrate noremoteplayback" draggable="false" oncontextmenu="return false"></video>
+</div>
+
 <script>
 function filterPublications(filter) {
     const publications = Array.from(document.querySelectorAll('#publications .publication[data-topics]'));
@@ -1232,10 +1236,63 @@ function setupCarousels() {
     });
 }
 
+function setupDemoHoverPreview() {
+    const hoverQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
+    const preview = document.getElementById('demo-hover-preview');
+    const player = document.getElementById('demo-hover-player');
+    let activeCard = null;
+
+    if (!preview || !player) return;
+
+    const hidePreview = () => {
+        activeCard = null;
+        preview.classList.remove('is-visible');
+        preview.setAttribute('aria-hidden', 'true');
+        player.pause();
+        player.removeAttribute('src');
+        player.removeAttribute('poster');
+        player.load();
+    };
+
+    document.querySelectorAll('#demos .demo-card').forEach((card) => {
+        const sourceVideo = card.querySelector('video');
+        if (!sourceVideo) return;
+
+        card.addEventListener('pointerenter', () => {
+            if (!hoverQuery.matches) return;
+            const source = sourceVideo.currentSrc || sourceVideo.querySelector('source')?.src;
+            if (!source) return;
+
+            activeCard = card;
+            player.poster = sourceVideo.poster;
+            player.src = source;
+            player.load();
+            preview.classList.add('is-visible');
+            preview.setAttribute('aria-hidden', 'false');
+            player.addEventListener('loadedmetadata', () => {
+                if (activeCard !== card) return;
+                try {
+                    player.currentTime = Math.min(sourceVideo.currentTime, player.duration || sourceVideo.currentTime);
+                } catch (error) {
+                    // Start from the beginning when seeking is unavailable.
+                }
+                player.play().catch(() => {});
+            }, { once: true });
+        });
+
+        card.addEventListener('pointerleave', () => {
+            if (activeCard === card) hidePreview();
+        });
+    });
+
+    window.addEventListener('blur', hidePreview);
+}
+
 // 页面加载完成后执行更新
 document.addEventListener('DOMContentLoaded', () => {
     setupPublicationFilters();
     setupCarousels();
+    setupDemoHoverPreview();
 });
 </script>
 </body>

@@ -451,6 +451,35 @@ p {
     line-height: 1.3;
 }
 
+.demo-hover-preview {
+    position: fixed;
+    z-index: 1000;
+    inset: 0;
+    display: grid;
+    visibility: hidden;
+    place-items: center;
+    background: rgba(255, 255, 255, 0.86);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 140ms ease, visibility 140ms ease;
+}
+
+.demo-hover-preview.is-visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.demo-hover-player {
+    display: block;
+    width: min(75vw, calc(75vh * 16 / 9));
+    max-height: 75vh;
+    aspect-ratio: 16 / 9;
+    border-radius: 6px;
+    background: #000;
+    object-fit: contain;
+    box-shadow: 0 16px 48px rgba(5, 31, 58, 0.24);
+}
+
 .presentations {
     margin: 0;
     padding: 0;
@@ -952,5 +981,9 @@ a.publication-title:hover {
 @media (prefers-reduced-motion: reduce) {
     html, .horizontal-scroller {
         scroll-behavior: auto;
+    }
+
+    .demo-hover-preview {
+        transition: none;
     }
 }
