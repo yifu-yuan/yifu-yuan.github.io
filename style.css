@@ -961,8 +961,14 @@ a.publication-title:hover {
     }
 
     .publication-filters {
-        flex-wrap: nowrap;
-        overflow-x: auto;
+        flex-wrap: wrap;
+        gap: 6px 10px;
+        overflow: visible;
+        white-space: normal;
+    }
+
+    .publication-filters .filter-button {
+        flex: 0 0 auto;
         white-space: nowrap;
     }
 }
