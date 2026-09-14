@@ -14,7 +14,7 @@
     <link rel="apple-touch-icon" href="assets/logo.jpg">
     <link rel="icon" type="image/png" href="assets/logo.jpg">
     <link rel="manifest" href="assets/site.webmanifest">
-    <link rel="stylesheet" href="style.css?v=20260913-18">
+    <link rel="stylesheet" href="style.css?v=20260914-19">
 </head>
 
 <body>
@@ -402,37 +402,37 @@
             </div>
         </div>
         <div class="demo-grid horizontal-scroller noselect" id="demos-scroll" tabindex="0" aria-label="Autoplay demo gallery">
-            <article class="demo-card">
+            <article class="demo-card is-loading" aria-busy="true">
                 <video class="demo-video" autoplay muted loop playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noplaybackrate noremoteplayback" poster="assets/warpsac.png" draggable="false" oncontextmenu="return false" aria-label="WarpSAC learning to walk in 30 minutes demo">
                     <source src="assets/warpsac-demo.mp4" type="video/mp4">
                 </video>
                 <strong>WarpSAC · Learning to Walk in 30 Minutes</strong>
             </article>
-            <article class="demo-card">
+            <article class="demo-card is-loading" aria-busy="true">
                 <video class="demo-video" autoplay muted loop playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noplaybackrate noremoteplayback" poster="assets/forceflow.png" draggable="false" oncontextmenu="return false" aria-label="ForceFlow manipulation demo">
                     <source src="https://jokeresc.github.io/ForceFlow-page/static/videos/forceflow_demo.mp4" type="video/mp4">
                 </video>
                 <strong>ForceFlow</strong>
             </article>
-            <article class="demo-card">
+            <article class="demo-card is-loading" aria-busy="true">
                 <video class="demo-video" autoplay muted loop playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noplaybackrate noremoteplayback" poster="assets/embodied-r15.png" draggable="false" oncontextmenu="return false" aria-label="Embodied-R1.5 manipulation demo">
                     <source src="assets/embodied-r15-demo.mp4" type="video/mp4">
                 </video>
                 <strong>Embodied-R1.5</strong>
             </article>
-            <article class="demo-card">
+            <article class="demo-card is-loading" aria-busy="true">
                 <video class="demo-video" autoplay muted loop playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noplaybackrate noremoteplayback" poster="assets/semanticvla.png" draggable="false" oncontextmenu="return false" aria-label="SemanticVLA bricks disassembly demo">
                     <source src="assets/semanticvla-bricks.mp4" type="video/mp4">
                 </video>
                 <strong>SemanticVLA</strong>
             </article>
-            <article class="demo-card">
+            <article class="demo-card is-loading" aria-busy="true">
                 <video class="demo-video" autoplay muted loop playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noplaybackrate noremoteplayback" poster="assets/embodied-r1.jpg" draggable="false" oncontextmenu="return false" aria-label="Embodied-R1 multi-task manipulation demo">
                     <source src="assets/embodied-r1-demo.mp4" type="video/mp4">
                 </video>
                 <strong>Embodied-R1</strong>
             </article>
-            <article class="demo-card">
+            <article class="demo-card is-loading" aria-busy="true">
                 <video class="demo-video" autoplay muted loop playsinline preload="metadata" disablepictureinpicture controlslist="nodownload noplaybackrate noremoteplayback" poster="assets/aharobot.png" draggable="false" oncontextmenu="return false" aria-label="AhaRobot manipulation and mobile demo">
                     <source src="assets/aharobot-demo.mp4" type="video/mp4">
                 </video>
@@ -1248,6 +1248,27 @@ function setupCarousels() {
     });
 }
 
+function setupDemoLoadingStates() {
+    document.querySelectorAll('#demos .demo-card').forEach((card) => {
+        const video = card.querySelector('video');
+        if (!video) return;
+
+        const setLoading = (isLoading) => {
+            card.classList.toggle('is-loading', isLoading);
+            card.setAttribute('aria-busy', String(isLoading));
+        };
+
+        ['loadstart', 'waiting', 'stalled', 'emptied'].forEach((eventName) => {
+            video.addEventListener(eventName, () => setLoading(true));
+        });
+        ['loadeddata', 'canplay', 'playing'].forEach((eventName) => {
+            video.addEventListener(eventName, () => setLoading(false));
+        });
+
+        setLoading(video.readyState < HTMLMediaElement.HAVE_CURRENT_DATA);
+    });
+}
+
 function setupDemoHoverPreview() {
     const hoverQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
     const preview = document.getElementById('demo-hover-preview');
@@ -1271,7 +1292,7 @@ function setupDemoHoverPreview() {
         if (!sourceVideo) return;
 
         card.addEventListener('pointerenter', () => {
-            if (!hoverQuery.matches) return;
+            if (!hoverQuery.matches || card.classList.contains('is-loading')) return;
             const source = sourceVideo.currentSrc || sourceVideo.querySelector('source')?.src;
             if (!source) return;
 
@@ -1304,6 +1325,7 @@ function setupDemoHoverPreview() {
 document.addEventListener('DOMContentLoaded', () => {
     setupPublicationFilters();
     setupCarousels();
+    setupDemoLoadingStates();
     setupDemoHoverPreview();
 });
 </script>
